@@ -1,1 +1,1 @@
-docker push 22ndtech/ndtech-sapper:0.0.2
+docker push 22ndtech/ndtech-sapper:0.0.3
