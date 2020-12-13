@@ -3,7 +3,7 @@
 environment: development
 serviceAccount:
   name: ndtech-sapper
-deployment
+deployment:
   replicas: 1
   minReadySeconds: 3
   namespace: default
