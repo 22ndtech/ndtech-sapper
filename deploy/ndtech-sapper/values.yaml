@@ -7,5 +7,5 @@ deployment:
   replicas: 1
   minReadySeconds: 3
   namespace: default
-  image-version: 0.0.1
+  imageVersion: 0.0.1
   containerPort: 3000
