@@ -23,7 +23,7 @@ spec:
       containers:
       - name: ndtech-sapper
         image: "22ndtech/ndtech-sapper:{{ .Values.deployment.imageVersion }}"
-        imagePullPolicy: IfNotPresent
+        imagePullPolicy: Always
         ports:
         - name: http
           containerPort: {{ .Values.deployment.containerPort }}

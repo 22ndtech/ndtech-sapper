@@ -1,1 +1,1 @@
-docker tag 22ndtech/ndtech-sapper 22ndtech/ndtech-sapper:0.0.2
+docker tag 22ndtech/ndtech-sapper:latest 22ndtech/ndtech-sapper:0.0.2

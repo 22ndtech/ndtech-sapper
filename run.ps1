@@ -7,4 +7,4 @@ docker run `
 -e GIT_USER_EMAIL="$ENV:GIT_USER_EMAIL" `
 -e GIT_REPOSITORY_NAME="ndtech" `
 -p 3000:3000 `
---rm 22ndtech/ndtech-sapper
+--rm 22ndtech/ndtech-sapper:0.0.2
