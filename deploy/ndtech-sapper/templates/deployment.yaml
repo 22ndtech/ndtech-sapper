@@ -2,10 +2,10 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: ndtech-sapper
-  namespace: ndtech
+  namespace: {{ .Values.deployment.namespace }}
 spec:
-  replicas: 1
-  minReadySeconds: 3
+  replicas: {{ .Values.deployment.replicas }}
+  minReadySeconds: {{ .Values.deployment.minReadySeconds | default 3 | quote }}
   revisionHistoryLimit: 5
   progressDeadlineSeconds: 60
   strategy:
@@ -22,7 +22,7 @@ spec:
     spec:
       containers:
       - name: ndtech-sapper
-        image: 22ndtech/ndtech-sapper:0.0.1
+        image: 22ndtech/ndtech-sapper:{{ .Values.deployment.image-version }}
         imagePullPolicy: IfNotPresent
         ports:
         - name: http
