@@ -5,7 +5,7 @@ metadata:
   namespace: {{ .Values.deployment.namespace }}
 spec:
   replicas: {{ .Values.deployment.replicas }}
-  minReadySeconds: {{ .Values.deployment.minReadySeconds | default 3 | quote }}
+  minReadySeconds: {{ .Values.deployment.minReadySeconds | default 3 }}
   revisionHistoryLimit: 5
   progressDeadlineSeconds: 60
   strategy:
