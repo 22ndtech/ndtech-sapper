@@ -47,7 +47,7 @@
 			<li><a class:current={segment === undefined} href=".">home</a></li>
       		<li><a class:current={segment === 'contact'} href="contact">contact</a></li>
       		<li><a class:current={segment === 'about'} href="about">about</a></li>
-      		<li><a rel=prefetch class:current={segment === 'blog'} href="blog">blog</a></li>
+      		<li><a rel=prefetch class:current={segment === 'jobs'} href="jobs">jobs</a></li>
 		</ul>
 	</div>
 </nav>
