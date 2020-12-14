@@ -1,12 +1,5 @@
 <script>
-	import { onMount } from 'svelte';
-
-	console.log('home');
 	
-	onMount(() => {
-    // safe for browser-only code - e.g. fetch
-    console.log('only ever runs in the browser');
-  });
 </script>
 
 <style>
@@ -52,5 +45,5 @@
 	<h1>Welcome to 22nd Tech!!</h1>
 		<p>If you want to go fast, go alone.  If you want to go far, go together.   - African Proverb</p>
 	<p>Read our Blog.</p>
-	<a href="blog" class="btn">22nd Tech Blog</a>
+	<a href="jobs" class="btn">22nd Tech Blog</a>
 </div>
