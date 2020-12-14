@@ -1,34 +1,40 @@
 <script>
-	import successkid from 'images/successkid.jpg';
+	import { onMount } from 'svelte';
+
+	console.log('home');
+	
+	onMount(() => {
+    // safe for browser-only code - e.g. fetch
+    console.log('only ever runs in the browser');
+  });
 </script>
 
 <style>
-	h1, figure, p {
+	h1, p {
 		text-align: center;
 		margin: 0 auto;
 	}
-
 	h1 {
-		font-size: 2.8em;
+		font-size: 2em;
 		text-transform: uppercase;
 		font-weight: 700;
 		margin: 0 0 0.5em 0;
 	}
-
-	figure {
-		margin: 0 0 1em 0;
-	}
-
 	img {
-		width: 100%;
-		max-width: 400px;
-		margin: 0 0 1em 0;
+		width: 200px;
+		margin: 0 auto;
+    		display: block;
 	}
-
 	p {
 		margin: 1em auto;
+  	}
+	a {
+		margin-top: 40px;
 	}
-
+	div {
+		margin-top: 60px;
+		text-align: center;
+	}
 	@media (min-width: 480px) {
 		h1 {
 			font-size: 4em;
@@ -40,11 +46,11 @@
 	<title>ndtech sapper service</title>
 </svelte:head>
 
-<h1>22ndtech</h1>
-
-<figure>
-	<img alt="Success Kid" src="{successkid}">
-	<figcaption>Yes!</figcaption>
-</figure>
-
-<p><strong>Try editing this file (src/routes/index.svelte) to test live reloading.</strong></p>
+<div>
+	<!-- svelte-ignore a11y-img-redundant-alt -->
+	<img src='AR_1.jpg' alt='AR photo'>
+	<h1>Welcome to 22nd Tech!!</h1>
+		<p>If you want to go fast, go alone.  If you want to go far, go together.   - African Proverb</p>
+	<p>Read our Blog.</p>
+	<a href="blog" class="btn">22nd Tech Blog</a>
+</div>
