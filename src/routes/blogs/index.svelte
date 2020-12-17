@@ -1,14 +1,14 @@
 <script context="module">
   // console.log('module script');
   export async function preload(page, session) {
-		const res = await this.fetch('/jobs.json');
-		const jobs = await res.json();
-		return { jobs };
+		const res = await this.fetch('/blogs.json');
+		const blogs = await res.json();
+		return { blogs };
   }
 </script>
 
 <script>
-  export let jobs;
+  export let blogs;
 </script>
 
 <style>
@@ -34,14 +34,14 @@
   }
 </style>
 
-<h2>All Current Jobs</h2>
+<h2>Recent Blog Posts</h2>
 
 <ul>
-	{#each jobs as job}
-		<li><a rel=prefetch href={`jobs/${job.id}`}>{job.title}</a></li>
+	{#each blogs as blog}
+		<li><a rel=prefetch href={`blogs/${blog.id}`}>{blog.title}</a></li>
 	{/each}
 </ul>
 
 <div>
-<a href="jobs/create" class="btn">Add a New Job</a>
+<a href="blogs/create" class="btn">Add a New Blog</a>
 </div>
