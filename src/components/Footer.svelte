@@ -10,6 +10,6 @@
   </style>
   
   <footer>
-    Copyright 2020 Job Ninja
+    Copyright 2020 22nd Tech
   </footer>
   
