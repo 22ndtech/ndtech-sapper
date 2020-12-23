@@ -1,18 +1,19 @@
-<script context="module">
+<!-- <script context="module">
   // console.log('module script');
   export async function preload(page, session) {
-		const res = await this.fetch('/blogs.json');
-		const blogs = await res.json();
-		return { blogs };
+    const res = await this.fetch("/blogs.json");
+    const blogs = await res.json();
+    return { blogs };
   }
-</script>
+</script> -->
 
 <script>
-  export let blogs;
+  import { BlogStore } from "./BlogStore"; 
+  import { MongoStore } from "@db/MongoStore"
 </script>
 
 <style>
-  ul{
+  ul {
     padding: 0;
   }
   li {
@@ -37,11 +38,9 @@
 <h2>Recent Blog Posts</h2>
 
 <ul>
-	{#each blogs as blog}
-		<li><a rel=prefetch href={`blogs/${blog.id}`}>{blog.title}</a></li>
-	{/each}
+  {#each $BlogStore as blog}
+    <li><a rel="prefetch" href={`blogs/${blog.id}`}>{blog.title}</a></li>
+  {/each}
 </ul>
 
-<div>
-<a href="blogs/create" class="btn">Add a New Blog</a>
-</div>
+<div><a href="blogs/create" class="btn">Add a New Blog</a></div>

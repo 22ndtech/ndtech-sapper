@@ -1,5 +1,6 @@
 <script>
     import { goto } from '@sapper/app';
+import { BlogStore } from './BlogStore';
 
     let title;
     let date;
@@ -16,6 +17,11 @@
         goto('blogs');
       }
     }
+
+const handleAdd = async () => {
+  BlogStore.addBlog({title, date, details});
+  goto('blogs');
+}
   </script>
   
   <style>
@@ -43,6 +49,6 @@
     <input type="text" placeholder="blog title" bind:value={title} required>
     <!-- <input type="number" placeholder="date" bind:value={date} required> -->
     <textarea placeholder="blog details" bind:value={details} required></textarea>
-    <button class="btn">Add new blog</button>
+    <button class="btn" on:click={() => handleAdd()}>Add new blogg</button>
   </form>
   

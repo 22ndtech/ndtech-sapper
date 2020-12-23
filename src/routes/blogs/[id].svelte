@@ -1,28 +1,18 @@
+    
 <script context="module">
-    // console.log('module script');
+    import { BlogStore } from "./BlogStore";
     export async function preload(page, session) {
         const { id } = page.params;
-
-        const res = await this.fetch(`blogs/${id}.json`);
-
-        if (res.status === 200) {
-            const blog = await res.json();
-            return { blog }
-        }
-
-        if (res.status === 404) {
-            const { error } = await res.json();
-            this.error(404, error);
-        }
+        const blog = BlogStore.getBlog(id);
+        return {blog};
     }
   </script>
-
+  
   <script>
-      export let blog;
+    export let blog;
   </script>
 
  <div class="blog">
-     <h2>{ blog.title }</h2>
-     <!-- <p>Date { blog.date }</p> -->
+    <h2>{ blog.title }</h2>
      <p>{ blog.details }</p>
  </div>
